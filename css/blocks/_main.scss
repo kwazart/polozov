@@ -1,0 +1,30 @@
+@import "property";
+@import "vars";
+
+* {
+    @include main-body;
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
+}
+
+body {
+    font-family: $mainFontFamily;
+    font-style: $mainFontStyle;
+    font-weight: $mainFontWeight;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul { list-style:none }
+
+header {
+    background-color: #222222;
+    padding: 17px 0 18px 0;
+}
+
+summary {
+    display: block;
+}

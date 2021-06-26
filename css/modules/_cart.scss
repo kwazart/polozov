@@ -1,0 +1,405 @@
+.cart {
+    @include container;
+    @include just-content-space-between;
+
+    margin-top: 71px;
+    min-height: 128px + 214px + 442px;
+    margin-bottom: 128px;
+
+    .cart__header {
+        font-weight: 300;
+        font-size: $mainFontSize + 2;
+        line-height: $mainLineHeight + 2;
+        color: $secondaryColor;
+    }
+
+    &__items {
+        
+        width: 652px;
+
+        &__item {
+            display: flex;
+            margin-bottom: 40px;
+            box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+            position: relative;
+
+            &__img {
+                width: 306px;
+                
+                img { 
+                    height: 100%;
+                }
+            }
+
+            &__info {
+                margin-top: 22px;
+                width: 262px;
+
+                &__title {
+                    font-size: $mainFontSize + 10;
+                    line-height: $mainLineHeight + 12;
+                    color: $secondaryColor;
+                    margin-bottom: 42px;
+                }
+
+                &__text {
+                    font-size: $mainFontSize + 8;
+                    line-height: $mainLineHeight + 9;
+                    color: #575757;
+
+                    span {
+                        color: #EF5B70;
+                    }
+
+                    &__quantity {
+                        display: inline-block;
+                        padding: 0 16px;
+                        border: 1px solid #EAEAEA;
+                        margin-left: 24px;
+                    }
+                }
+
+                &__text:not(:last-child) {
+                    margin-bottom: 6px;
+                }
+            }
+
+            &__exit {
+                position: absolute;
+                top: 28px;
+                right: 22px;
+
+                &:hover svg {
+                    fill: $mainColor;
+                }
+            }
+        }
+
+        &__btns {
+            @include just-content-space-between;
+
+            margin-top: 72px;
+        
+
+            div {
+                padding: 17px 41px 16px 39px;
+                font-weight: 300;
+                color: $secondaryColor;
+                border: 1px solid #A4A4A4;
+
+                &:hover {
+                    border-color: $mainColor;
+                    background-color: $mainColor;
+                    color: $primaryColor;
+                    transition: 0.5s;
+                    box-shadow: -3px 0px 66px -5px rgba(191, 31, 88, 0.2);
+                }
+
+                &:active {
+                    background: $primaryColor;
+                    color: $mainColor;
+                    outline: 1px solid $mainColor;
+
+                    svg {
+                        fill: $mainColor;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__info {
+        flex-direction: column;
+        width: 360px;
+
+        &__address {
+            width: 360px;
+            margin-bottom: 57px;
+            max-height: 272px;
+
+            
+
+            &__form {
+                display: flex;
+                flex-direction: column;
+
+                input[type="text"] {
+                    @include vertical-aligement;
+
+                    height: 45px;
+                    padding-left: 17px;
+                    padding-right: 17px;
+                    font-size: $mainFontSize - 1;
+                    line-height: $mainLineHeight - 1;
+                    border: 1px solid #A4A4A4;
+                    outline:none;
+                    color: #B1B1B1;
+                    font-weight: 300;
+
+                    margin-top: 20px;
+                }
+
+                input[type="submit"] {
+                    @include just-content-center;
+
+                    margin-top: 23px;
+                    font-weight: 300;
+                    font-size: $mainFontSize - 3;
+                    line-height: $mainLineHeight - 4;
+                    color: #4A4A4A;
+                    width: 100px;
+                    padding: 10px 14px 11px; 
+                    border: 1px solid #A4A4A4;
+                    background: none;
+                    cursor:pointer;
+
+                    &:hover {
+                        border-color: $mainColor;
+                        background-color: $mainColor;
+                        color: $primaryColor;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+
+        &__total {
+            height: 214px;
+            background-color: #F5F3F3;
+
+            width: 360px;
+            padding: 39px 34px 42px 44px;
+            display: flex;
+            flex-direction: column;
+
+            &__sub {
+                text-align: end;
+                font-size: $mainFontSize - 3;
+                line-height: $mainLineHeight - 4;
+                color: #4A4A4A;
+                margin-bottom: 12px;
+
+                span {
+                    margin-right: 25px;
+                }
+            }
+
+            &__grand {
+                text-align: end;
+                font-weight: bold;
+                font-size: $mainFontSize + 2;
+                line-height: $mainLineHeight + 2;
+                color: $mainColor;
+                margin-bottom: 12px;
+
+                span {
+                    margin-right: 25px;
+                    color: #4A4A4A;
+                    font-weight: 300;
+                }
+            }
+
+            hr {
+                @include just-content-center;
+
+                width: 275px;
+                background: #E2E2E2;
+
+                margin-top: 21px;
+                margin-bottom: 17px;
+            }
+
+            &__checkout {
+                button {
+                    @include just-content-center;
+
+                    width: 273px;
+                    height: 50px;
+                    border: none;
+                    background-color: $mainColor;
+
+                    font-weight: normal;
+                    font-style: normal;
+                    font-size: $mainFontSize + 1;
+                    line-height: $mainLineHeight + 2;
+
+                    color: $primaryColor;
+
+                    &:hover {
+                        box-shadow: -3px 0px 66px -5px rgba(191, 31, 88, 0.2);
+                    }
+    
+                    &:active {
+                        background: $primaryColor;
+                        color: $mainColor;
+                        outline: 1px solid $mainColor;
+    
+                        svg {
+                            fill: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) and (min-width:376px) {
+    .navigation__header {
+        padding-left: 16px;
+        padding-right: 18px;
+    }
+
+    .cart {
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 18px;
+
+        &__items {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .cart__header {
+            margin-top: 64px;
+        }
+
+        &__info {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__address {
+                margin-bottom: 0;
+                width: 360px;
+            }
+
+            &__total {
+                width: 360px;
+            }
+
+        }
+    }
+}
+
+/* phone */
+@media (max-width:375px) {
+    .navigation {
+        .container {
+            justify-content: center ;
+        }
+    }
+
+    .cart {
+        flex-direction: column;
+        padding-left: 9px;
+        padding-right: 8px;
+        margin-bottom: 96px;
+        margin-top: 39px;
+
+        &__items {
+            width: 100%;
+            margin: 0 auto;
+            
+            
+            &__item {
+                height: 188px;
+                display: flex;
+                box-shadow: 8px 8px 21px rgba(0, 0, 0, 0.13);
+                position: relative;
+    
+                &__img {
+                    width: 144px;
+                    
+                    img { 
+                        height: 100%;
+                        width: 144px;
+                    }
+                }
+    
+                &__info {
+                    margin-top: 0;
+                    padding-top: 13.5px;
+                    padding-left: 17px;
+                    width: 262px;
+    
+                    &__title {
+                        font-size: $mainFontSize + 2;
+                        line-height: $mainLineHeight + 2;
+                        color: $secondaryColor;
+                        margin-bottom: 26px;
+                    }
+    
+                    &__text {
+                        font-size: $mainFontSize;
+                        line-height: $mainLineHeight;
+                        color: #575757;
+    
+                        span {
+                            color: #EF5B70;
+                        }
+    
+                        &__quantity {
+                            display: inline-block;
+                            padding: 0 9px;
+                            border: 1px solid #EAEAEA;
+                            
+                        }
+                    }
+    
+                    &__text:not(:last-child) {
+                        margin-bottom: 6px;
+                    }
+                }
+    
+                &__exit {
+                    position: absolute;
+                    top: 0px;
+                    right: 12px;
+                    font-size: 30px;
+    
+                    &:hover svg {
+                        fill: $mainColor;
+                    }
+                } 
+
+                &:not(:last-of-type) {
+                    margin-bottom: 32px;
+                }
+            }
+
+            &__btns {
+                margin-top: 0;
+
+                div {
+                    width: 175px;
+                    text-align: center;
+                    padding: 9px 8px 10px 9px;
+                    font-weight: normal;
+                    font-size: $mainFontSize - 2;
+                    line-height: $mainLineHeight - 3;
+                    color: $secondaryColor;
+                    border: 1px solid #A4A4A4;
+                }
+            }
+        }
+
+        &__header {
+            margin-top: 48px;
+        }
+
+        &__info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__address {
+                margin-bottom: 48px;
+            }
+        }
+    }
+}

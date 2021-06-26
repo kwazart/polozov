@@ -1,0 +1,149 @@
+@import "main";
+
+header {
+    position: relative;
+    z-index: 2;
+
+    .header__wrap {
+        @include container;
+        @include just-content-space-between;
+    }
+
+    .header__logo {
+        margin-right: 41px;
+    }
+
+    .header__right {
+        @include just-content-center;
+    }
+
+    .header__menu {
+        background-color:$secondaryColor;
+        color: white;
+        font-size: 30px;
+    }
+
+    .header__item:not(:last-child) {
+        margin-right: 33px;
+    }  
+
+    .header__nav {
+        position: absolute;
+        top: 76px;
+        right: 0;
+        z-index: 10; 
+    }
+
+    .nav {
+        width: calc((100% - 1140px) / 2);
+        background-color: #fff;
+        max-height: calc(100vh - 63px);
+        padding-top: 37px;
+        padding-left: 34px;
+
+        &__title {
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        &__heading {
+            color: $mainColor;
+            margin-bottom: 12px;
+        }
+
+        &__list {
+            margin-bottom: 20px;
+        }
+
+        &__item {
+            padding-left: 21.5px;
+
+            &:not(:last-of-type) {
+                margin-bottom: 11px;
+            }
+
+            &:hover{
+                color: $mainColor;
+            }
+
+            &:active {
+                font-weight: 300;
+            }
+        }
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__close {
+            position: absolute;
+            font-size: 30px;
+            right: 17px;
+            top: -16px;
+
+            &:hover {
+                color: $mainColor;
+            }
+
+            &:active {
+                font-weight: bold;
+            }
+        }
+    }
+
+    #burger {
+        display: none;
+
+        &:checked~.header__nav {
+            display: block;
+        }
+
+        &:not(checked)~.header__nav {
+            display: none;
+        }
+    }
+
+    .promo {
+        background-color: pink;
+        height: calc(100vh - 63px);
+    }
+}
+
+ /* tablet */
+@media (max-width:1140px) and (min-width: 768px) {
+    header {
+        max-width: 1140px;
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &__wrap {
+            max-width: calc(768px - 16px * 2);
+        }
+
+        .nav {
+            width: 232px; 
+        }
+    }
+}
+
+ /* phone */
+ @media (max-width:767px) and (min-width: 375px) {
+    header {
+        max-width: 767px;
+        padding-left: 32px;
+        padding-right: 32px;
+
+        .header__item:not(:first-of-type) {
+            display: none;
+        }
+
+        .header__item:first-of-type {
+            margin-right: 0;
+        }
+
+        .nav {
+            width: 375px; 
+        }
+    }
+}
+

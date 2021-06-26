@@ -1,0 +1,438 @@
+.features {
+    @include just-content-center;
+}
+
+.bucket {
+    position: relative;
+}
+
+.count {
+    @include just-content-center;
+
+    position: absolute;
+    right: -10px;
+    top: -19px;
+    
+
+    width: 19px;
+    height: 19px;
+    background: #F16D7F;
+    border-radius: 50%;
+
+    font-size: $mainFontSize - 2;
+    line-height: $mainLineHeight - 3;
+
+    color: $primaryColor;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 420px;
+    background-color: rgba(58, 56, 56, 0.83);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.img-center {
+    @include just-content-center;
+    background-color: #F7E4E2;
+}
+
+
+.card-women {
+    background: linear-gradient(to right, rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url('/polozov/images/for-women.png');
+    &:hover {
+        background: url('../../images/for-women.png');
+    }
+}
+
+.card-men {
+    background: linear-gradient(to right, rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url('/polozov/images/for-men.png');
+    &:hover {
+        background: url('../../images/for-men.png');
+    }
+}
+
+.card-kids {
+    background: linear-gradient(to right, rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url('/polozov/images/for-kids.png');
+    &:hover {
+        background: url('../../images/for-kids.png');
+    }
+}
+
+.card-accesories {
+    background: linear-gradient(to right, rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url('/polozov/images/accesories.png');
+    &:hover {
+        background: url('../../images/accesories.png');
+    }
+}
+
+.intro {
+    background-color: #f1e4e6;
+    margin-bottom: 65px;
+
+    &__wrap {
+        @include container;
+        display: flex;
+        align-items: center;
+        min-height: 750px;
+        justify-content: flex-end;
+
+        background-image: url('/polozov/images/man-main.png');
+        background-repeat: no-repeat;
+        background-position: -228px 0;
+    }
+
+    &__text {
+        max-width: 405px;
+        font-weight: bold;
+        font-size: $mainFontSize + 18;
+        line-height: $mainLineHeight + 21;
+        padding-left: 16px;
+        border-left: 12px solid $mainColor;
+
+        &__header {
+            font-weight: 900;
+            font-size: $mainFontSize + 34;
+            line-height: $mainLineHeight + 41;
+        }
+
+        &__color {
+            color: mainColor;
+        }
+    }
+}
+
+.for_blocks {
+    &__wrap {
+        @include just-content-space-between;
+        @include container;
+
+        flex-wrap: wrap;
+    }
+
+    &__card {
+        @include just-content-center;
+        width: 32%;
+        min-height: 260px;
+        text-align: center;
+
+        &:last-child {
+            width: 100%;
+            margin-top: 30px;
+            max-height: 180px;
+            margin-bottom: 96px;
+        }
+
+        &__header {
+            font-weight: bold;
+            font-size: $mainFontSize + 10;
+            line-height: $mainLineHeight + 12;
+            color: $mainColor;
+        }
+
+        &__info {
+            font-size: $mainFontSize + 2;
+            line-height: $mainLineHeight + 2;
+            color: $primaryColor;
+        }
+    }
+}
+
+.add-btn {
+    @include vertical-aligement;
+
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px 16px 8px 13px;
+
+    &:hover {
+        color: rgba(58, 56, 56, 0.83);
+        background-color: $primaryColor;
+
+        svg {
+            fill: rgba(58, 56, 56, 0.83);
+        }
+    }
+
+    svg {
+        margin-right: 10px;
+        fill: $primaryColor;
+    }
+}
+
+.item_info {
+    text-align: center;
+    margin-bottom: 48px;
+
+    &__header {
+        font-size: $mainFontSize + 16;
+        line-height: $mainLineHeight + 19;
+        color: $secondaryColor;
+    }
+
+    &__text {
+        color: #9F9F9F;
+    }
+}
+
+.item_blocks {
+    margin-bottom: 18px;
+
+    &__wrap {
+        @include just-content-space-between;
+        @include container;
+
+        flex-wrap: wrap;
+    }
+
+    &__block {
+        width: 360px;
+        height: 581px;
+        background-color: #F8F8F8;
+        margin-bottom: 30px;
+        position: relative;
+        transition: 0.3s;
+
+        &:hover .overlay {
+            opacity: 1;
+        }
+
+        &__img {
+            width: 360px;
+            height: 420px;
+        }
+    } 
+
+
+    &__description {
+        padding: 25px 28px 20px 16px;
+
+        &__name {
+            font-size: $mainFontSize - 1;
+            line-height: $mainLineHeight - 1;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        &__info {
+            color: #5D5D5D;
+            margin-bottom: 18px;
+            font-weight: 300;
+        }
+
+        &__cost { 
+            font-size: $mainFontSize + 2;
+            line-height: $mainLineHeight + 2;
+            color: $mainColor;
+        }
+    }
+}
+
+.btn-vap {
+    @include just-content-center;
+
+    margin-bottom: 95px;
+
+    a {
+        font-size: $mainFontSize + 2;
+        line-height: $mainLineHeight + 2;
+        color: #F26376;
+        border: 1px solid #FF6A6A;
+        padding: 15px 39px 14px 39px;
+
+        &:hover {
+            background-color: #F26376;
+            color: $primaryColor;
+        }
+    }
+}
+
+.features {
+    @include just-content-center;
+
+    height: 341px;
+    background: $secondaryColor;
+
+    &__inner_wrap {
+        @include just-content-center;
+    }
+
+    &__one {
+        width: 360px;
+        text-align: center;
+        margin: auto;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__one_header {
+        font-size: $mainFontSize + 5;
+        line-height: $mainLineHeight + 7;
+        color: #FBFBFB;
+        margin-top: 28px;
+        margin-bottom: 16px;
+    }
+
+    &__one_text {
+        font-size: 13.972px;
+        font-weight: 300;
+        text-align: center;
+        color: #FBFBFB;
+    }
+}
+
+/* tablet */
+@media (max-width: 768px) and (min-width:376px) {
+    .features {
+        height: 610px;
+
+        &__inner_wrap {
+            flex-direction: column;
+        } 
+        
+        &__one:not(:last-child) {
+            margin-bottom: 48px;
+            margin-right: 0px;
+        }
+    }
+
+    .item_blocks__block {
+        margin-bottom: 16px;
+
+        &:nth-child(n) {
+            margin-left: 16px;
+        }
+        &:nth-child(2n) {
+            margin-right: 16px;
+        }
+   }
+
+   .for_blocks {
+        &__wrap {
+            padding: 0 16px;
+            max-width: 768px - 16px * 2;;
+        }
+
+        &__card {
+            min-height: 168px;
+
+            &:last-child {
+                min-height: 110px;
+            }
+        }
+    } 
+
+    .intro{
+        &__wrap {
+            min-height:368px;
+            background-size: 50%;
+            background-position: 0 0;
+        }
+
+        &__text {
+            max-width: 311px;
+            font-size: $mainFontSize + 10;
+            line-height: $mainLineHeight + 12;
+            margin-right: 35px;
+    
+            &__header {
+                font-size: $mainFontSize + 30;
+                line-height: $mainLineHeight + 37;
+            }
+    
+        }
+    }
+}
+
+/* phone */
+@media (max-width: 375px) {
+    .features {
+        height: 610px;
+        padding-left: 13px;
+        padding-right: 13px;
+
+        &__inner_wrap {
+            flex-direction: column;
+        } 
+        
+        &__one {
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: 48px;
+                margin-right: 0px;
+            }
+        }
+        
+    }
+
+    .item_blocks {
+        margin-bottom: 40px;
+
+        &__wrap {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+
+        &__block {
+            margin: 0 auto;
+        }
+    }
+    
+
+    .for_blocks {
+        padding-left: 16px;
+        padding-right: 16px;
+            &__wrap {
+                flex-direction: column;
+            }
+
+            &__card {
+                @include just-content-center;
+                width: 100%;
+                min-height: 260px;
+                text-align: center;
+                margin-bottom: 32px;
+        
+                &:last-child {
+                    width: 100%;
+                    min-height: 111px;
+                    margin-bottom: 96px;
+                    margin-top: 0;
+
+                }
+            }
+        } 
+
+    .intro{
+        &__wrap {
+            min-height:368px;
+            background-image: none;
+            justify-content: center;
+        }
+
+        &__text {
+            max-width: 263px;
+            font-size: $mainFontSize + 6;
+            line-height: $mainLineHeight + 7;
+
+    
+            &__header {
+                font-size: $mainFontSize + 21;
+                line-height: $mainLineHeight + 28;
+            }
+    
+        }
+    }
+}
